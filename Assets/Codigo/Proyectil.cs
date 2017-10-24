@@ -58,5 +58,13 @@ public class Proyectil : MonoBehaviour {
             //Destruimos el objeto cuando colisione contra el piso
             Destroy(gameObject);
         }
+        if (other.gameObject.tag == "zombiengrandes")
+        {
+            //Si el ataque colisiona contra un objeto con el tag 'Enemigo', se decrementan las vidas de dicho enemigo
+            other.gameObject.GetComponent<ControlZombiengrandes>().vidas--;
+
+            //Destruimos el objeto cuando colisione contra un enemigo
+            Destroy(gameObject);
+        }
     }
 }

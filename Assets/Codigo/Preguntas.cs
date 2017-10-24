@@ -46,6 +46,7 @@ public class Preguntas : MonoBehaviour {
         {
             fondoPregunta.SetActive(true);
             escogerAleatoria();
+            Time.timeScale = 0;
             pregunta.SetActive(false);
         }
     }
@@ -339,12 +340,14 @@ public class Preguntas : MonoBehaviour {
     {
         if (btnRtaA.text.Equals(rtaCorrecta)) {
             ControlJugador.puntaje += 50;
-            ControlJugador.numBalas += 2;
-            fondoPregunta.SetActive(false);          
+            ControlJugador.numBalas += 3;
+            fondoPregunta.SetActive(false);
+            Time.timeScale = 1;
         }
         else
         {
             fondoPregunta.SetActive(false);
+            Time.timeScale = 1;
         }
         
     }
@@ -354,12 +357,14 @@ public class Preguntas : MonoBehaviour {
         if (btnRtaB.text.Equals(rtaCorrecta))
         {
             ControlJugador.puntaje += 50;
-            ControlJugador.numBalas += 2;
+            ControlJugador.numBalas += 3;
             fondoPregunta.SetActive(false);
+            Time.timeScale = 1;
         }
         else
         {
             fondoPregunta.SetActive(false);
+            Time.timeScale = 1;
         }
     }
 
@@ -368,13 +373,15 @@ public class Preguntas : MonoBehaviour {
         if (btnRtaC.text.Equals(rtaCorrecta))
         {
             ControlJugador.puntaje += 50;
-            ControlJugador.numBalas += 2;
+            ControlJugador.numBalas += 3;
             fondoPregunta.SetActive(false);
+            Time.timeScale = 1;
 
         }
         else
         {
             fondoPregunta.SetActive(false);
+            Time.timeScale = 1;
         }
     }
 
@@ -383,12 +390,15 @@ public class Preguntas : MonoBehaviour {
         if (btnRtaD.text.Equals(rtaCorrecta))
         {
             ControlJugador.puntaje += 50;
-            ControlJugador.numBalas += 2;
+            ControlJugador.numBalas += 3;
             fondoPregunta.SetActive(false);
+            Time.timeScale = 1;
+
         }
         else
         {
             fondoPregunta.SetActive(false);
+            Time.timeScale = 1;
         }
     }
 }

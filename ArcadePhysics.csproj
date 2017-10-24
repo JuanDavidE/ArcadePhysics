@@ -82,7 +82,10 @@
     <Compile Include="Assets\Codigo\ControlJugador.cs" />
     <Compile Include="Assets\Codigo\ControlZombie.cs" />
     <Compile Include="Assets\Codigo\ControlZombieMujer.cs" />
+    <Compile Include="Assets\Codigo\ControlZombiengrandes.cs" />
+    <Compile Include="Assets\Codigo\Energía.cs" />
     <Compile Include="Assets\Codigo\PlataformaMovediza.cs" />
+    <Compile Include="Assets\Codigo\PlataformaPrecaucion.cs" />
     <Compile Include="Assets\Codigo\Preguntas.cs" />
     <Compile Include="Assets\Codigo\Proyectil.cs" />
   </ItemGroup>

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class ControlJugador : MonoBehaviour {
 
-    public GameObject cuchilla,cuchilla2, cuchilla3, cuchilla4;
+    public GameObject cuchilla, cuchilla2, cuchilla3, cuchilla4, cuchilla5, puertaSalida;
 
     public Rigidbody2D rbJugador;
 
@@ -30,28 +30,33 @@ public class ControlJugador : MonoBehaviour {
     //Creamos una variable pública donde asignar nuestro prefab 'Proyectil'
     public GameObject ProyectilPrefab;//Cambiar bala por bola 
 
-    public static int numBalas=4;
+    public static int numBalas=6;
     public static int puntaje=0;
     public Text lblBalas;
     public Text lblPuntaje;
+    public GameObject imgGanaste;
 
     //Barra de vida
     public Scrollbar barraVida;
-    private float vidaJugador = 100f;
+    public static float vidaJugador = 100f;
     private float tiempoMuerte;
+    
 
     // Use this for initialization
     void Start () {
         rbJugador = GetComponent<Rigidbody2D>();
         morir = false;
         disparo = false;
+        puertaSalida.SetActive(false);
+        imgGanaste.SetActive(false);
     }
 
     private void LateUpdate()
     {
         if (tiempoMuerte > 1.65){
             puntaje = 0;
-            numBalas = 4;
+            numBalas = 6;
+            vidaJugador = 100f;
             SceneManager.LoadScene("Nivel1");
         }    
     }
@@ -87,6 +92,7 @@ public class ControlJugador : MonoBehaviour {
         cuchilla2.transform.Rotate(0, 0, 280 * Time.deltaTime);
         cuchilla3.transform.Rotate(0, 0, 320 * Time.deltaTime);
         cuchilla4.transform.Rotate(0, 0, 350 * Time.deltaTime);
+        cuchilla5.transform.Rotate(0, 0, 350 * Time.deltaTime);
     }
 
     void Salto()
@@ -202,6 +208,15 @@ public class ControlJugador : MonoBehaviour {
         if (other.gameObject.tag == "zombienmuertosmujer")
         {
             vidaJugador -= 20;
+        }
+        if (other.gameObject.tag == "zombiengrandes")
+        {
+            vidaJugador -= 40;
+        }
+        if (other.gameObject.tag == "SwitchSalida")
+        {
+            puertaSalida.SetActive(true);
+            imgGanaste.SetActive(true);
         }
     }
 }

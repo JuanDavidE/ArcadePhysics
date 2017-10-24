@@ -11,6 +11,8 @@ TagManager:
   - Chuzos
   - zombienmuertosmujer
   - Cuchillas
+  - zombiengrandes
+  - SwitchSalida
   layers:
   - Default
   - TransparentFX
